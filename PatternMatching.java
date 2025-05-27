@@ -22,14 +22,19 @@ public class PatternMatching {
     }
 
     public static void main(String[] args) {
-        String s1 = "ABCDCBDCBDACBDABDCBADF";
-        String s2 = "ADF";
+        String s1 = "SADHUGOASHOGHNSBFGBFLASPATTERN";
+        String s2 = "PATTERN";
+
         int[] iteracoes = { 0 };
         int[] instrucoes = { 0 };
 
+        long start = System.nanoTime();
         int pos = findFirstOccurrence(s1, s2, iteracoes, instrucoes);
+        long end = System.nanoTime();
+
         System.out.println("Posição: " + pos);
         System.out.println("Iterações: " + iteracoes[0]);
         System.out.println("Instruções: " + instrucoes[0]);
+        System.out.println("Tempo de execução: " + ((end - start) / 1_000_000.0) + " ms");
     }
 }
